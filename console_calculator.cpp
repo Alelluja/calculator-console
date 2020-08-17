@@ -29,7 +29,7 @@ void show_menu_again()
 }
 
 //Life
-void take_info_about_bmi()
+void main_bmi()
 {
     clear_console();
 
@@ -49,7 +49,7 @@ void take_info_about_bmi()
     show_menu_again();
 }
 
-void take_info_about_cost_travel()
+void main_cost_travel()
 {
     clear_console();
 
@@ -73,7 +73,7 @@ void take_info_about_cost_travel()
     show_menu_again();
 }
 
-void take_info_about_avg_combustion()
+void main_avg_combustion()
 {
     clear_console();
 
@@ -94,7 +94,7 @@ void take_info_about_avg_combustion()
 }
 
 //Games
-void take_info_about_winratio()
+void main_winratio()
 {
     clear_console();
 
@@ -114,7 +114,7 @@ void take_info_about_winratio()
     show_menu_again();
 }
 
-void take_info_about_kda()
+void main_kda()
 {
     clear_console();
 
@@ -138,7 +138,7 @@ void take_info_about_kda()
     show_menu_again();
 }
 
-void take_info_about_pick_ratio()
+void main_pick_ratio()
 {
     clear_console();
 
@@ -158,7 +158,7 @@ void take_info_about_pick_ratio()
     show_menu_again();
 }
 
-void take_info_about_ban_ratio()
+void main_ban_ratio()
 {
     clear_console();
 
@@ -179,7 +179,7 @@ void take_info_about_ban_ratio()
 }
 
 //Math
-void take_info_about_square_area()
+void main_square_area()
 {
     clear_console();
 
@@ -195,7 +195,7 @@ void take_info_about_square_area()
     show_menu_again();
 }
 
-void take_info_about_rectangle_area()
+void main_rectangle_area()
 {
     clear_console();
 
@@ -215,7 +215,7 @@ void take_info_about_rectangle_area()
     show_menu_again();
 }
 
-void take_info_about_triangle_area()
+void main_triangle_area()
 {
     clear_console();
 
@@ -235,7 +235,7 @@ void take_info_about_triangle_area()
     show_menu_again();
 }
 
-void take_info_about_trapezoid_area()
+void main_trapezoid_area()
 {
     clear_console();
 
@@ -259,7 +259,7 @@ void take_info_about_trapezoid_area()
     show_menu_again();
 }
 
-void take_info_about_rhomb_area()
+void main_rhomb_area()
 {
     clear_console();
 
@@ -279,7 +279,7 @@ void take_info_about_rhomb_area()
     show_menu_again();
 }
 
-void take_info_about_parallelogram_area()
+void main_parallelogram_area()
 {
     clear_console();
 
@@ -357,15 +357,15 @@ void life_calculators_menu()
         }
         case 1:
         {
-            take_info_about_bmi();
+            main_bmi();
         }
         case 2:
         {
-            take_info_about_cost_travel();
+            main_cost_travel();
         }
         case 3:
         {
-            take_info_about_avg_combustion();
+            main_avg_combustion();
         }
     }
 }
@@ -393,15 +393,15 @@ void game_calculators_menu()
         }
         case 1:
         {
-            take_info_about_kda();
+            main_kda();
         }
         case 2:
         {
-            take_info_about_pick_ratio();
+            main_pick_ratio();
         }
         case 3:
         {
-            take_info_about_ban_ratio();
+            main_ban_ratio();
         }
     }
 }
@@ -432,27 +432,27 @@ void math_calculators_menu()
         }
         case 1:
         {
-            take_info_about_square_area();
+            main_square_area();
         }
         case 2:
         {
-            take_info_about_rectangle_area();
+            main_rectangle_area();
         }
         case 3:
         {
-            take_info_about_triangle_area();
+            main_triangle_area();
         }
         case 4:
         {
-            take_info_about_trapezoid_area();
+            main_trapezoid_area();
         }
         case 5:
         {
-            take_info_about_rhomb_area();
+            main_rhomb_area();
         }
         case 6:
         {
-            take_info_about_parallelogram_area();
+            main_parallelogram_area();
         }
     }
 }
