@@ -1,186 +1,8 @@
 #include <iostream>
 #include <math.h>
+#include "console_calculator.h"
 
 using namespace std;
-
-//Life
-float calculate_bmi(float weight, float height)
-{
-    if (weight <= 0 || height <= 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = weight / (pow(height, 2) / 10000);
-
-    return result;
-}
-
-float calculate_cost_travel(float combustion, float cost, float length)
-{
-    if (combustion < 0 || cost < 0 || length < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = (combustion * (length / 100) * cost);
-
-    return result;
-}
-
-float calculate_avg_combustion(float combustion, float length)
-{
-    if (combustion < 0 || length < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = combustion / (length / 100);
-
-    return result;
-}
-
-//Games
-float calculate_winratio(float wins, float totality)
-{
-    if (wins < 0 || totality < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = (wins / totality) * 100;
-
-    return result;
-}
-
-float calculate_kda_ratio(float kills, float deaths, float assists)
-{
-    if (kills < 0 || deaths < 0 || assists < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = (kills + assists) / deaths;
-
-    return result;
-}
-
-float calculate_pick_ban_ratio(float pick, float games)
-{
-    if (pick < 0 || games < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = (pick / games) * 100;
-
-    return result;
-}
-
-//Math
-float calculate_area_square(float a)
-{
-    if (a < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = pow(a, 2);
-
-    return result;
-}
-
-float calculate_area_rectangle(float a, float b)
-{
-    if (a < 0 || b < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = a * b;
-
-    return result;
-}
-
-float calculate_area_triangle(float a, float h)
-{
-    if (a < 0 || h < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = (a * h) / 2;
-
-    return result;
-}
-
-float calculate_area_trapezoid(float a, float b, float h)
-{
-    if (a < 0 || b < 0 || h < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = ((a + b) * h) / 2;
-
-    return result;
-}
-
-float calculate_area_rhomb_parallelogram(float a, float h)
-{
-    if (a < 0 || h < 0)
-    {
-        printf("Give a number higher than zero!\n");
-
-        return 0;
-    }
-
-    float result;
-
-    result = a * h;
-
-    return result;
-}
 
 void show_menu();
 void life_calculators_menu();
@@ -222,7 +44,7 @@ void take_info_about_bmi()
     printf("\nEnter the height(cm): ");
     scanf_s("%f", &height);
 
-    printf("\nYour BMI: %0.2f\n\n", calculate_bmi(weight, height));
+    printf("\nYour BMI: %0.2f\n\n", bmi(weight, height));
 
     show_menu_again();
 }
@@ -246,7 +68,7 @@ void take_info_about_cost_travel()
     printf("\nEnter the length of route(km): ");
     scanf_s("%f", &length);
 
-    printf("\nTravel Costs: %0.2fzl\n\n", calculate_cost_travel(combustion, cost, length));
+    printf("\nTravel Costs: %0.2fzl\n\n", cost_travel(combustion, cost, length));
 
     show_menu_again();
 }
@@ -266,7 +88,7 @@ void take_info_about_avg_combustion()
     printf("\nEnter the length of traveled kilometers: ");
     scanf_s("%f", &length);
 
-    printf("\nAverage combustion: %0.2f\n\n", calculate_avg_combustion(combustion, length));
+    printf("\nAverage combustion: %0.2f\n\n", avg_combustion(combustion, length));
 
     show_menu_again();
 }
@@ -287,7 +109,7 @@ void take_info_about_winratio()
     printf("\nEnter the number of matches: ");
     scanf_s("%f", &totality);
 
-    printf("\nYour Winratio: %0.1f%%\n\n", calculate_winratio(wins, totality));
+    printf("\nYour Winratio: %0.1f%%\n\n", winratio(wins, totality));
 
     show_menu_again();
 }
@@ -311,7 +133,7 @@ void take_info_about_kda()
     printf("\nEnter the number of assists: ");
     scanf_s("%f", &assists);
 
-    printf("\nYour KDA: %0.2f\n\n", calculate_kda_ratio(kills, deaths, assists));
+    printf("\nYour KDA: %0.2f\n\n", kda_ratio(kills, deaths, assists));
 
     show_menu_again();
 }
@@ -331,7 +153,7 @@ void take_info_about_pick_ratio()
     printf("\nEnter the number of games on picked champion: ");
     scanf_s("%f", &games);
 
-    printf("\nYour pick ratio: %0.1f%%\n\n", calculate_pick_ban_ratio(pick, games));
+    printf("\nYour pick ratio: %0.1f%%\n\n", pick_ban_ratio(pick, games));
 
     show_menu_again();
 }
@@ -351,13 +173,13 @@ void take_info_about_ban_ratio()
     printf("\nEnter the number of games on banned champion: ");
     scanf_s("%f", &games);
 
-    printf("\nYour ban ratio: %0.1f%%\n\n", calculate_pick_ban_ratio(ban, games));
+    printf("\nYour ban ratio: %0.1f%%\n\n", pick_ban_ratio(ban, games));
 
     show_menu_again();
 }
 
 //Math
-void take_info_about_area_square()
+void take_info_about_square_area()
 {
     clear_console();
 
@@ -368,12 +190,12 @@ void take_info_about_area_square()
     printf("Enter the number side of the square: ");
     scanf_s("%f", &a);
 
-    printf("\nArea square: %0.2f%\n\n", calculate_area_square(a));
+    printf("\nArea square: %0.2f%\n\n", square_area(a));
 
     show_menu_again();
 }
 
-void take_info_about_area_rectangle()
+void take_info_about_rectangle_area()
 {
     clear_console();
 
@@ -388,12 +210,12 @@ void take_info_about_area_rectangle()
     printf("\nEnter the number second side of the rectangle: ");
     scanf_s("%f", &b);
 
-    printf("\nArea rectangle: %0.2f%\n\n", calculate_area_rectangle(a, b));
+    printf("\nArea rectangle: %0.2f%\n\n", rectangle_area(a, b));
 
     show_menu_again();
 }
 
-void take_info_about_area_triangle()
+void take_info_about_triangle_area()
 {
     clear_console();
 
@@ -408,12 +230,12 @@ void take_info_about_area_triangle()
     printf("\nEnter the number height of the triangle: ");
     scanf_s("%f", &h);
 
-    printf("\nArea triangle: %0.2f%\n\n", calculate_area_triangle(a, h));
+    printf("\nArea triangle: %0.2f%\n\n", triangle_area(a, h));
 
     show_menu_again();
 }
 
-void take_info_about_area_trapezoid()
+void take_info_about_trapezoid_area()
 {
     clear_console();
 
@@ -432,12 +254,12 @@ void take_info_about_area_trapezoid()
     printf("\nEnter the number height of the trapezoid: ");
     scanf_s("%f", &h);
 
-    printf("\nArea triangle: %0.2f%\n\n", calculate_area_trapezoid(a, b, h));
+    printf("\nArea triangle: %0.2f%\n\n", trapezoid_area(a, b, h));
 
     show_menu_again();
 }
 
-void take_info_about_area_rhomb()
+void take_info_about_rhomb_area()
 {
     clear_console();
 
@@ -452,12 +274,12 @@ void take_info_about_area_rhomb()
     printf("\nEnter the number height of the rhomb: ");
     scanf_s("%f", &h);
 
-    printf("\nArea triangle: %0.2f%\n\n", calculate_area_rhomb_parallelogram(a, h));
+    printf("\nArea triangle: %0.2f%\n\n", rhomb_parallelogram_area(a, h));
 
     show_menu_again();
 }
 
-void take_info_about_area_parallelogram()
+void take_info_about_parallelogram_area()
 {
     clear_console();
 
@@ -472,7 +294,7 @@ void take_info_about_area_parallelogram()
     printf("\nEnter the number height of the parallelogram: ");
     scanf_s("%f", &h);
 
-    printf("\nArea triangle: %0.2f%\n\n", calculate_area_rhomb_parallelogram(a, h));
+    printf("\nArea triangle: %0.2f%\n\n", rhomb_parallelogram_area(a, h));
 
     show_menu_again();
 }
@@ -491,7 +313,25 @@ void show_menu()
     printf("Choose option: ");
     scanf_s("%i", &choice);
 
-    choice == 0 ? exit(0) : (choice == 1 ? life_calculators_menu() : (choice == 2 ? game_calculators_menu() : math_calculators_menu()));
+    switch (choice)
+    {
+        case 0:
+        {
+            exit(0);
+        }
+        case 1:
+        {
+            life_calculators_menu();
+        }
+        case 2:
+        {
+            game_calculators_menu();
+        }
+        case 3:
+        {
+            math_calculators_menu();
+        }
+    }
 }
 
 void life_calculators_menu()
@@ -509,7 +349,25 @@ void life_calculators_menu()
     printf("Choose option: ");
     scanf_s("%i", &choice);
 
-    choice == 0 ? exit(0) : (choice == 1 ? take_info_about_bmi() : (choice == 2 ? take_info_about_cost_travel() : take_info_about_avg_combustion()));
+    switch (choice)
+    {
+        case 0:
+        {
+            exit(0);
+        }
+        case 1:
+        {
+            take_info_about_bmi();
+        }
+        case 2:
+        {
+            take_info_about_cost_travel();
+        }
+        case 3:
+        {
+            take_info_about_avg_combustion();
+        }
+    }
 }
 
 void game_calculators_menu()
@@ -527,7 +385,25 @@ void game_calculators_menu()
     printf("Choose option: ");
     scanf_s("%i", &choice);
 
-    choice == 0 ? exit(0) : (choice == 1 ? take_info_about_kda() : (choice == 2 ? take_info_about_pick_ratio() : take_info_about_ban_ratio()));
+    switch (choice)
+    {
+        case 0:
+        {
+            exit(0);
+        }
+        case 1:
+        {
+            take_info_about_kda();
+        }
+        case 2:
+        {
+            take_info_about_pick_ratio();
+        }
+        case 3:
+        {
+            take_info_about_ban_ratio();
+        }
+    }
 }
 
 void math_calculators_menu()
@@ -548,12 +424,37 @@ void math_calculators_menu()
     printf("Choose option: ");
     scanf_s("%i", &choice);
 
-    choice == 0 ? exit(0) : 
-        (choice == 1 ? take_info_about_area_square() : 
-            (choice == 2 ? take_info_about_area_rectangle() : 
-                (choice == 3 ? take_info_about_area_triangle() : 
-                    (choice == 4 ? take_info_about_area_trapezoid() : 
-                        (choice == 5 ? take_info_about_area_rhomb() : take_info_about_area_parallelogram())))));
+    switch (choice)
+    {
+        case 0:
+        {
+            exit(0);
+        }
+        case 1:
+        {
+            take_info_about_square_area();
+        }
+        case 2:
+        {
+            take_info_about_rectangle_area();
+        }
+        case 3:
+        {
+            take_info_about_triangle_area();
+        }
+        case 4:
+        {
+            take_info_about_trapezoid_area();
+        }
+        case 5:
+        {
+            take_info_about_rhomb_area();
+        }
+        case 6:
+        {
+            take_info_about_parallelogram_area();
+        }
+    }
 }
 
 int main()
