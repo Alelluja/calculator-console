@@ -1,1 +1,1 @@
-# calculator-console
+# Shop in Console
